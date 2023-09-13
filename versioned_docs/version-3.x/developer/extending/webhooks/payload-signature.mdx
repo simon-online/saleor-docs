@@ -52,7 +52,7 @@ export const config = {
 
 export default function(req, res) {
   const jws = req.headers["saleor-signature"];
-  const buffer = getRawBody(req, {
+  const buffer = await getRawBody(req, {
     length: req.headers["content-length"],
     limit: "1mb",
   });
